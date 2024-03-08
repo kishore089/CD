@@ -1,0 +1,13 @@
+%{
+#include<stdio.h>
+%}
+%%
+[0-9] {printf("\n%s is DIGIT",yytext);}
+.+ {printf("\n%s is not a DIGIT",yytext);}
+%%
+
+int yywrap(){}
+int main()
+{
+while(yylex());
+}
